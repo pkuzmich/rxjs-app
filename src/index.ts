@@ -43,12 +43,16 @@ setTimeout(() => {
 //   }
 // })
 
-const subscription: Subscription = timer(2000, 1000).subscribe((value) => {
-  console.log(value)
+// const subscription: Subscription = timer(2000, 1000).subscribe((value) => {
+//   console.log(value)
 
-  if (value === 5) {
-    subscription.unsubscribe()
-  }
+//   if (value === 5) {
+//     subscription.unsubscribe()
+//   }
+// })
+
+const subscription: Subscription = of(1, 2, [3, 4], { a: 1, b: 2 }).subscribe((value) => {
+  console.log(value)
 })
 
 // from([1, 2, [3, 4], { a: 1, b: 2 }]).subscribe((value) => {
