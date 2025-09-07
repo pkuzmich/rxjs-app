@@ -35,6 +35,8 @@ setTimeout(() => {
 }, 3000)
 */
 
+// Templates
+
 // const subscription: Subscription = interval(1000).subscribe((value) => {
 //   console.log(value)
 
@@ -55,6 +57,8 @@ setTimeout(() => {
 //   console.log(value)
 // })
 
-from([1, 2, [3, 4], { a: 1, b: 2 }]).subscribe((value) => {
+const mainPromise = new Promise((resolve) => resolve('Hello'))
+
+from(mainPromise).subscribe((value) => {
   console.log(value)
 })
