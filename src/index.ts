@@ -57,8 +57,9 @@ setTimeout(() => {
 //   console.log(value)
 // })
 
-const mainPromise = new Promise((resolve) => resolve('Hello'))
+// const mainPromise = new Promise((resolve) => resolve('Hello'))
+// from(mainPromise).subscribe((value) => {
+//   console.log(value)
+// })
 
-from(mainPromise).subscribe((value) => {
-  console.log(value)
-})
+from(fetch('https://jsonplaceholder.typicode.com/posts/1')).subscribe(console.log)
