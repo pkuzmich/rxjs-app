@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
 
 const stream$ = new Observable<number>((subscriber) => {
   let count = 0
@@ -17,7 +17,7 @@ const stream$ = new Observable<number>((subscriber) => {
   }
 })
 
-stream$.subscribe({
+const subscription: Subscription = stream$.subscribe({
   next: (value) => {
     console.log(value)
   },
@@ -28,3 +28,7 @@ stream$.subscribe({
     console.log(error)
   }
 })
+
+setTimeout(() => {
+  subscription.unsubscribe()
+}, 3000)
