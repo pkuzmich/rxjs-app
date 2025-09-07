@@ -1,3 +1,4 @@
+import { ajax } from 'rxjs/ajax'
 import { from, interval, Observable, of, Subscription, timer } from 'rxjs'
 
 /*
@@ -62,4 +63,10 @@ setTimeout(() => {
 //   console.log(value)
 // })
 
-from(fetch('https://jsonplaceholder.typicode.com/posts/1')).subscribe(console.log)
+// from(fetch('https://jsonplaceholder.typicode.com/posts/1')).subscribe(console.log)
+
+ajax({
+  url: 'https://jsonplaceholder.typicode.com/posts/1',
+  crossDomain: true,
+  method: 'GET'
+}).subscribe(console.log)
