@@ -51,10 +51,10 @@ setTimeout(() => {
 //   }
 // })
 
-const subscription: Subscription = of(1, 2, [3, 4], { a: 1, b: 2 }).subscribe((value) => {
-  console.log(value)
-})
-
-// from([1, 2, [3, 4], { a: 1, b: 2 }]).subscribe((value) => {
+// const subscription: Subscription = of(1, 2, [3, 4], { a: 1, b: 2 }).subscribe((value) => {
 //   console.log(value)
 // })
+
+from([1, 2, [3, 4], { a: 1, b: 2 }]).subscribe((value) => {
+  console.log(value)
+})
