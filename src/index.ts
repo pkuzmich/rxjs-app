@@ -1,4 +1,4 @@
-import { from, interval, Observable, of, Subscription } from 'rxjs'
+import { from, interval, Observable, of, Subscription, timer } from 'rxjs'
 
 /*
 const stream$ = new Observable<number>((subscriber) => {
@@ -35,10 +35,22 @@ setTimeout(() => {
 }, 3000)
 */
 
-const subscription: Subscription = interval(1000).subscribe((value) => {
+// const subscription: Subscription = interval(1000).subscribe((value) => {
+//   console.log(value)
+
+//   if (value === 5) {
+//     subscription.unsubscribe()
+//   }
+// })
+
+const subscription: Subscription = timer(2000, 1000).subscribe((value) => {
   console.log(value)
 
   if (value === 5) {
     subscription.unsubscribe()
   }
 })
+
+// from([1, 2, [3, 4], { a: 1, b: 2 }]).subscribe((value) => {
+//   console.log(value)
+// })
